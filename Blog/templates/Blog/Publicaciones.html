@@ -1,0 +1,111 @@
+{% extends "Blog/base.html" %}
+
+
+{% block contenidoQueCambia %}
+
+<head>
+    <style>
+        body {
+            background-color: #485763;
+            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 50%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .card img {
+            width: 90%;
+            height: auto;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .card h3 {
+            text-align: left;
+            font-size: 0.9em;
+            color: #606060;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            text-align: left;
+            font-size: 0.9em;
+            color: #606060;
+            margin-bottom: 10px;
+            
+        }
+
+        .card .author-date {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: #606060;
+        }
+
+        .card .boton {
+            background-color: #4a90e2; 
+            color: white; 
+            font-size: 0.8em;
+            padding: 5px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            margin-left: 10px;
+            width: 30%;
+        }
+
+        .card .boton:hover {
+            background-color: #275488; 
+            color: white; 
+        }
+    </style>
+</head>
+
+<body>
+
+    {% for x in t_publicaciones %}
+
+    <div class ="card">
+        <h2>{{ x.titulo}}</h2>
+        <h3>{{ x.subtitulo}}</h3>
+        <p> {{ x.comentarios }}</p>
+
+        <div class="author-date">
+            <span>{{x.autor.last_name}}, {{x.autor.first_name}}</span>
+            <span>{{x.fecha}}</span>
+        </div>
+        <div style="display: flex;">
+            <button class="boton">
+                <a href="{% url 'Blog:NuevaPubli' %}" style="color: white;">EDITAR</a>
+            </button> 
+            <button class="boton">
+                <a href="{% url 'Blog:NuevaPubli' %}" style="color: white;">ELIMINAR</a>
+            </button>
+            <button class="boton">
+                <a href="{% url 'Blog:NuevaPubli' %}" style="color: white;">VER COMENTARIOS</a>
+            </button>
+        </div>
+        
+    </div>
+
+    {% endfor %}
+</body>
+
+{% endblock %}

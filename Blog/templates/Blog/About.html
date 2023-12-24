@@ -1,0 +1,103 @@
+{% extends "Blog/base.html" %}
+
+
+{% block contenidoQueCambia %}
+<head>
+    <style>
+
+        .card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 30%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .card_General {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .card h2 {
+            margin-bottom: 20px;
+            color: black;
+        }
+        .card_General h2 {
+            margin-bottom: 5px;
+            color: black;
+        }
+
+        .card h3 {
+            text-align: left;
+            font-size: 0.9em;
+            color: #606060;
+            margin-bottom: 10px;
+        }
+        .card_General h3 {
+            text-align: center;
+            font-size: 0.9em;
+            color: #606060;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            text-align: left;
+            font-size: 0.9em;
+            color: #606060;
+            margin-bottom: 10px;
+            
+        }
+        .card_General p {
+            text-align: center;
+            font-size: 0.9em;
+            color: #606060;
+            margin-bottom: 10px;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+
+    
+    
+    <div class ="card_General">
+        <h2>PROYECTO FINAL</h2>
+        <h3>CODER BLOG</h3>
+        <p>Este proyecto se presenta al finalizar el curso de Python donde luego de aproximadamente 3 meses aprendimos a realizar una web con python y django.</p>
+    </div>
+    <div class ="card_General">
+        <h2>AUTORES</h2>
+        <p>Somos 3 compañeros de trabajo que decidimos emprender esta capacitación juntos</p>
+        <p>Apasionados por la tecnología y especializados en la prevención de fraudes, queremos expandir nuestros horizontes para desarrollar mejores sistemas que nos ayuden a reducir los ciberdelitos (?</p>
+    </div>
+
+    <div style="display: flex;">
+        <div class ="card">
+            <h2>Monica Raven</h2>
+            <h3>Tirate una descripción Moni</h3>
+            <p>Acá va lo que hiciste, por ejemplo: Se encargó de realizar el Login y el CRUD de la aplicación Blog</p>
+        </div>
+        <div class ="card">
+            <h2>Franco Santillan</h2>
+            <h3>Tirate una descripción Fran</h3>
+            <p>Acá va lo que hiciste</p>
+        </div>
+        <div class ="card">
+            <h2>Fernando Moresi</h2>
+            <h3>Tirate una descripción Fer</h3>
+            <p>Acá va lo que hiciste</p>
+        </div>
+        
+    </div>
+
+</body>
+{% endblock %}

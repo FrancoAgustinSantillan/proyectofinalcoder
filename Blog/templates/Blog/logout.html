@@ -1,0 +1,8 @@
+{% extends "Blog/base.html" %}
+
+{% block contenidoQueCambia%}
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Cerrar sesión</button>
+</form>
+{% endblock%}
