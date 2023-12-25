@@ -1,8 +1,12 @@
 {% extends "Blog/base.html" %}
 
-{% block contenidoQueCambia%}
-<form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit">Cerrar sesión</button>
-</form>
-{% endblock%}
+{% block contenidoQueCambia %}
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Cerrar sesión</button>
+    </form>
+    <p>Has cerrado sesión exitosamente. ¿Quieres <a href="{% url 'VistaReiniciarLog' %}">iniciar sesión de nuevo</a>?</p>
+
+{% endblock %}
+
+

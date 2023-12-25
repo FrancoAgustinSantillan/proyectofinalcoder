@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+APPEND_SLASH = False
 # Application definition
 
 INSTALLED_APPS = [
@@ -125,5 +125,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGOUT_REDIRECT_URL = 'Blog:logout'
+LOGOUT_REDIRECT_URL = '/Blog/login'
 LOGIN_URL = "/Blog/login"

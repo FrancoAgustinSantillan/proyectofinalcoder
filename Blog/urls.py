@@ -11,9 +11,11 @@ urlpatterns = [
  path('Publicaciones/',views.Publicaciones,name='blog'),
  path('NuevaPublicacion/',views.nueva_publicacion_view,name='NuevaPubli'),
  path('MisPublicaciones/',views.mis_publicaciones,name='MiBlog'),
- path('About/',views.VerAcercaDe,name='About'),
- path("registro/", views.v_registro, name="registro"),
- path("login/", views.VistaLogIn, name="login"),
- path('logout/', auth_views.LogoutView.as_view(next_page='VistaReiniciarLog'), name='logout'),
+ path('About',views.VerAcercaDe,name='About'),
+ path("registro", views.v_registro, name="registro"),
+ path("login", views.VistaLogIn, name="login"),
+ path('VistaReiniciarLog/', views.VistaReiniciarLog, name='VistaReiniciarLog'),
+ path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+
 ]
     

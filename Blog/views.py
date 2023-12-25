@@ -48,7 +48,7 @@ def VerAcercaDe(request):
     return render(request,'blog/About.html')
 
 def VistaReiniciarLog(request):
-    return render(request,'blog/login.html')
+    return render(request, 'blog/login.html') 
 
 
 ##############################
@@ -98,11 +98,21 @@ def VistaLogIn(request):
 
 
 
-def VistaLogOut(request):
-    pass
+from django.contrib.auth import logout
+from django.shortcuts import render, redirect
 
+def VistaLogOut(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('Blog/login.html')  # Cambia 'nombre_de_la_vista_login' por el nombre real de tu vista de login
+    return render(request, 'Blog/logout.html')  # Ajusta 'Blog/logout.html' según tu estructura de carpetas y archivos
+
+# Otra opción, usando una función llamada logout_view
 def logout_view(request):
-    pass
+    if request.method == 'POST':
+        logout(request)
+        return redirect('Blog/login.html')  # Cambia 'nombre_de_la_vista_login' por el nombre real de tu vista de login
+    return render(request, 'Blog/logout.html')  # Ajusta 'Blog/logout.html' según tu estructura de carpetas y archivos
 
 #########################
 ##      Registro       ##
